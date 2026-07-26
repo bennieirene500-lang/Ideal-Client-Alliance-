@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The ICA Story | Ideal Client Alliance</title>
+  <meta
+    name="description"
+    content="Discover why Ideal Client Alliance was created, what it stands for and how practical learning can help ordinary people use AI and technology with clarity."
+  >
+  <meta name="author" content="Ideal Client Alliance">
+  <meta name="theme-color" content="#080a13">
+
+  <meta property="og:title" content="The ICA Story">
+  <meta
+    property="og:description"
+    content="Hear the story behind Ideal Client Alliance and discover why practical learning and applied knowledge matter."
+  >
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+
+  <style>
+    body.story-page {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+      color: #f7f8fc;
+      background:
+        radial-gradient(circle at 72% 10%, rgba(237, 99, 57, 0.10), transparent 28rem),
+        linear-gradient(135deg, #090b12 0%, #0c0e16 55%, #080a10 100%);
+    }
+
+    .story-main {
+      min-height: 100vh;
+      padding: 56px clamp(24px, 5vw, 76px) 80px;
+    }
+
+    .story-inner {
+      width: min(980px, 100%);
+      margin: 0 auto;
+    }
+
+    .story-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .story-kicker::before {
+      width: 34px;
+      height: 2px;
+      background: #ed6339;
+      content: "";
+    }
+
+    .story-heading {
+      margin: 0 0 20px;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+    }
+
+    .story-heading span {
+      display: block;
+      color: #ed6339;
+    }
+
+    .story-intro {
+      max-width: 840px;
+      margin: 0;
+      color: #cfd3dc;
+      font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+      line-height: 1.75;
+    }
+
+    .story-intro strong {
+      color: #ffffff;
+    }
+
+    .story-belief {
+      margin: 32px 0 42px;
+      padding: 22px 0 0 22px;
+      border-left: 3px solid #ed6339;
+    }
+
+    .story-belief p {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.25rem, 2vw, 1.7rem);
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .story-video-wrap {
+      margin-top: 34px;
+    }
+
+    .story-video-label {
+      margin: 0 0 14px;
+      color: #ff8b68;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .story-video {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 6px;
+      background: #050608;
+      box-shadow: 0 28px 80px rgba(0,0,0,.42);
+    }
+
+    .story-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .story-next {
+      margin-top: 42px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+
+    .story-next h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: -0.04em;
+    }
+
+    .story-next p {
+      max-width: 700px;
+      margin: 0;
+      color: #b7bdc9;
+      font-size: 1.04rem;
+      line-height: 1.7;
+    }
+
+    .story-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .story-primary-action {
+      display: inline-flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 0 24px;
+      border-radius: 3px;
+      color: #ffffff;
+      background: #ed6339;
+      box-shadow: 0 14px 34px rgba(237,99,57,.24);
+      font-weight: 900;
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .story-primary-action:hover {
+      background: #ff8b68;
+      transform: translateY(-2px);
+    }
+
+    .story-secondary-action {
+      padding: 8px 2px 5px;
+      border-bottom: 2px solid #ed6339;
+      color: #ffffff;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .story-footer {
+      margin-top: 72px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: #858c9b;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 780px) {
+      .story-main {
+        padding: 38px 20px 60px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .story-main {
+        padding-inline: 17px;
+      }
+
+      .story-heading {
+        font-size: clamp(2.6rem, 13vw, 4.2rem);
+      }
+
+      .story-actions {
+        align-items: stretch;
+      }
+
+      .story-primary-action {
+        width: 100%;
+      }
+
+      .story-secondary-action {
+        margin-inline: auto;
+      }
+    }
+  </style>
+</head>
+
+<body class="home-v2 story-page">
+  <div class="hub-shell">
+    <aside class="hub-sidebar" id="site-sidebar" aria-label="Ideal Client Alliance navigation">
+      <a class="hub-brand" href="index.html" aria-label="Ideal Client Alliance home">
+        <span class="hub-brand-mark">ICA</span>
+        <span class="hub-brand-copy">
+          <strong>Ideal Client Alliance</strong>
+          <small>Learn. Apply. Build.</small>
+        </span>
+      </a>
+
+      <div class="hub-nav-group">
+        <p class="hub-nav-label">About ICA</p>
+        <nav class="hub-nav">
+          <a href="index.html">What Is ICA?</a>
+          <a class="active" href="explore-ica.html">The ICA Story</a>
+          <a href="explore-ica.html#story">Why ICA Exists</a>
+        </nav>
+      </div>
+
+      <div class="hub-nav-group">
+        <p class="hub-nav-label">Learn &amp; Grow</p>
+        <nav class="hub-nav">
+          <a href="free-training.html">Free AI Training</a>
+          <a href="https://stan.store/lrmobi/p/youre-close-youre-just-missing-the-system" target="_blank" rel="noopener noreferrer">ICA Pro Hub</a>
+          <a href="https://chat.whatsapp.com/ElAxhWWs9pXEI2l2cNnXFE?s=cl&amp;p=i&amp;ilr=4" target="_blank" rel="noopener noreferrer">Free Community</a>
+          <a href="explore-ica.html#story">AI Coaches</a>
+        </nav>
+      </div>
+
+      <div class="hub-nav-group">
+        <p class="hub-nav-label">Watch &amp; Explore</p>
+        <nav class="hub-nav">
+          <a href="https://www.youtube.com/@idealclientalliance" target="_blank" rel="noopener noreferrer">YouTube Training</a>
+          <a href="https://nateg27.gonowos.com/" target="_blank" rel="noopener noreferrer">NOWOS System</a>
+          <a class="active" href="explore-ica.html">Explore ICA</a>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="hub-page">
+      <header class="hub-mobile-bar">
+        <a class="hub-mobile-brand" href="index.html">
+          <span class="hub-brand-mark">ICA</span>
+          <span>Ideal Client Alliance</span>
+        </a>
+
+        <button
+          class="hub-menu-button"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="site-sidebar"
+          aria-expanded="false">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </header>
+
+      <main class="story-main" id="story">
+        <div class="story-inner">
+          <p class="story-kicker">The story behind the mission</p>
+
+          <h1 class="story-heading">
+            The
+            <span>ICA Story</span>
+          </h1>
+
+          <p class="story-intro">
+            Before you begin your journey through Ideal Client Alliance, take a few minutes
+            to hear why ICA was created. This is not a story about building a business.
+            It is a story about helping ordinary people navigate extraordinary changes in
+            technology, artificial intelligence and the future of work.
+          </p>
+
+          <p class="story-intro" style="margin-top: 18px;">
+            The podcast below shares the experiences, lessons and beliefs that eventually
+            became Ideal Client Alliance. <strong>Listen with one question in mind:</strong>
+            what becomes possible when people are given practical guidance and the confidence
+            to apply what they learn?
+          </p>
+
+          <div class="story-belief">
+            <p>
+              Knowledge is not power.<br>
+              The application of knowledge is power.
+            </p>
+          </div>
+
+          <section class="story-video-wrap" aria-labelledby="story-video-heading">
+            <p class="story-video-label" id="story-video-heading">Watch the ICA Story</p>
+
+            <div class="story-video">
+              <iframe
+                src="https://www.youtube.com/embed/SyJL3ceUUrA?si=bRU7NE0KbwP6nBO0"
+                title="The ICA Story podcast"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </section>
+
+          <section class="story-next">
+            <h2>Thank you for taking the time to hear the story.</h2>
+
+            <p>
+              Now that you understand why ICA exists, the next step is simple:
+              begin with one practical lesson and experience the ICA approach for yourself.
+            </p>
+
+            <div class="story-actions">
+              <a class="story-primary-action" href="free-training.html">
+                Start Free AI Training
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <a class="story-secondary-action" href="index.html">
+                Return to ICA
+              </a>
+            </div>
+          </section>
+
+          <footer class="story-footer">
+            Ideal Client Alliance — Learn. Apply. Build.
+          </footer>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="hub-menu-backdrop" hidden></div>
+</body>
+</html>
