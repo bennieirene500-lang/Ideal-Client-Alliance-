@@ -727,73 +727,13 @@ body.home-v2 {
   box-shadow: 0 25px 70px rgba(0,0,0,.42);
 }
 
-.home-v2 .ica-video-frame,
-.home-v2 .ica-video-fallback {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .home-v2 .ica-video-frame {
-  display: block;
-  border: 0;
-}
-
-.home-v2 .ica-video-fallback {
-  display: none;
-  overflow: hidden;
-  color: #fff;
-  background: #06070a;
-}
-
-.home-v2 .ica-video-fallback img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .83;
-}
-
-.home-v2 .ica-video-fallback::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(5,6,9,.78), rgba(5,6,9,.05));
-  content: "";
-}
-
-.home-v2 .ica-play-button {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  display: grid;
-  width: 74px;
-  height: 74px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--hub-orange);
-  box-shadow: 0 14px 38px rgba(0,0,0,.34);
-  transform: translate(-50%, -50%);
-  font-size: 1.45rem;
-  padding-left: 4px;
-}
-
-.home-v2 .ica-watch-label {
-  position: absolute;
-  z-index: 2;
-  right: 20px;
-  bottom: 16px;
-  left: 20px;
-  font-weight: 850;
-  text-align: center;
-}
-
-.home-v2 .ica-video.is-fallback .ica-video-frame {
-  display: none;
-}
-
-.home-v2 .ica-video.is-fallback .ica-video-fallback {
   display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .home-v2 .ica-kicker {
@@ -876,55 +816,43 @@ body.home-v2 {
   font-weight: 850;
 }
 
+/* Clean portrait presentation */
 .home-v2 .ica-portrait {
   position: relative;
   z-index: 1;
-  min-height: 760px;
+  min-height: 720px;
   align-self: end;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  isolation: isolate;
+  margin: 0;
 }
 
-.home-v2 .ica-portrait::before {
-  position: absolute;
-  z-index: -2;
-  inset: 66px -4% 0 9%;
-  background:
-    radial-gradient(circle at 47% 26%, rgba(255,255,255,.08), transparent 31%),
-    linear-gradient(150deg, rgba(255,255,255,.055), rgba(255,255,255,.008));
-  clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%);
-  content: "";
-}
-
-.home-v2 .ica-portrait-wordmark {
-  position: absolute;
-  z-index: -1;
-  top: 58px;
-  right: -15px;
-  color: rgba(255,255,255,.035);
-  font-size: clamp(8rem, 16vw, 15rem);
-  font-weight: 950;
-  letter-spacing: -.1em;
-  line-height: .8;
+.home-v2 .ica-portrait-image-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .home-v2 .ica-portrait img {
-  width: min(100%, 680px);
-  max-height: 800px;
+  width: min(100%, 620px);
+  max-height: 760px;
   object-fit: contain;
   object-position: center bottom;
-  filter: drop-shadow(0 23px 24px rgba(0,0,0,.4));
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,.35));
 }
 
 .home-v2 .ica-portrait-caption {
   position: absolute;
   right: 14px;
   bottom: 24px;
-  padding: 12px 15px;
-  border-left: 3px solid var(--hub-orange);
-  background: rgba(5,7,12,.64);
+  padding: 11px 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 4px;
+  background: rgba(5,7,12,.56);
+  box-shadow: 0 12px 30px rgba(0,0,0,.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -935,7 +863,7 @@ body.home-v2 {
 }
 
 .home-v2 .ica-portrait-caption small {
-  color: #aaaFbc;
+  color: #aeb4c2;
   font-size: .67rem;
   font-weight: 800;
   letter-spacing: .12em;
@@ -970,7 +898,7 @@ body.home-v2 {
   }
 
   .home-v2 .ica-portrait {
-    min-height: 650px;
+    min-height: 640px;
   }
 }
 
@@ -1055,7 +983,7 @@ body.home-v2 {
   }
 
   .home-v2 .ica-portrait {
-    min-height: 520px;
+    min-height: 510px;
     margin-top: -12px;
   }
 }
@@ -1086,7 +1014,7 @@ body.home-v2 {
   }
 
   .home-v2 .ica-portrait {
-    min-height: 410px;
+    min-height: 400px;
   }
 
   .home-v2 .ica-portrait-caption {
