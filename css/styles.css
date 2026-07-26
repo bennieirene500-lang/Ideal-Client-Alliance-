@@ -703,7 +703,7 @@ body.home-v2 {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
   gap: clamp(24px, 4vw, 68px);
-  align-items: end;
+  align-items: center;
   padding: 46px clamp(26px, 5vw, 82px) 24px;
 }
 
@@ -816,45 +816,94 @@ body.home-v2 {
   font-weight: 850;
 }
 
-/* Clean portrait presentation */
+/* Premium founder portrait presentation */
 .home-v2 .ica-portrait {
   position: relative;
   z-index: 1;
-  min-height: 720px;
-  align-self: end;
+  min-height: 760px;
+  align-self: center;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  margin: 0;
+  margin: -72px -28px 0 0;
+  isolation: isolate;
+}
+
+.home-v2 .ica-portrait::before {
+  position: absolute;
+  z-index: -2;
+  inset: 8% 0 3%;
+  border-radius: 42% 42% 16% 16% / 28% 28% 12% 12%;
+  background:
+    radial-gradient(circle at 54% 35%, rgba(237,99,57,.32), transparent 32%),
+    radial-gradient(circle at 50% 68%, rgba(237,99,57,.13), transparent 42%),
+    linear-gradient(180deg, rgba(23,18,20,.15) 0%, rgba(9,10,16,.72) 70%, rgba(5,7,12,.98) 100%);
+  filter: blur(.2px);
+  content: "";
+  pointer-events: none;
+}
+
+.home-v2 .ica-portrait::after {
+  position: absolute;
+  z-index: -1;
+  right: 6%;
+  bottom: 3%;
+  left: 6%;
+  height: 110px;
+  border: 1px solid rgba(237,99,57,.32);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(237,99,57,.15), transparent 68%);
+  box-shadow: 0 0 55px rgba(237,99,57,.16);
+  transform: perspective(420px) rotateX(68deg);
+  content: "";
+  pointer-events: none;
 }
 
 .home-v2 .ica-portrait-image-wrap {
   position: relative;
-  width: 100%;
+  width: 112%;
+  min-height: 760px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 60% 34%, rgba(237,99,57,.18), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,.018), rgba(5,7,12,.32));
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
 }
 
 .home-v2 .ica-portrait img {
-  width: min(100%, 620px);
-  max-height: 760px;
+  position: relative;
+  z-index: 1;
+  width: min(118%, 720px);
+  max-width: none;
+  max-height: 800px;
   object-fit: contain;
   object-position: center bottom;
-  filter: drop-shadow(0 18px 30px rgba(0,0,0,.35));
+  transform: translateY(-44px) scale(1.06);
+  transform-origin: center bottom;
+  filter:
+    drop-shadow(0 28px 38px rgba(0,0,0,.52))
+    drop-shadow(0 0 18px rgba(237,99,57,.10));
 }
 
 .home-v2 .ica-portrait-caption {
   position: absolute;
-  right: 14px;
-  bottom: 24px;
-  padding: 11px 14px;
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 4px;
-  background: rgba(5,7,12,.56);
-  box-shadow: 0 12px 30px rgba(0,0,0,.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  z-index: 3;
+  right: 24px;
+  bottom: 42px;
+  min-width: 205px;
+  padding: 12px 16px 13px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-left: 3px solid var(--hub-orange);
+  border-radius: 5px;
+  background: rgba(5,7,12,.78);
+  box-shadow: 0 16px 38px rgba(0,0,0,.34);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .home-v2 .ica-portrait-caption small,
@@ -898,7 +947,18 @@ body.home-v2 {
   }
 
   .home-v2 .ica-portrait {
-    min-height: 640px;
+    min-height: 650px;
+    margin-top: -46px;
+    margin-right: -18px;
+  }
+
+  .home-v2 .ica-portrait-image-wrap {
+    min-height: 650px;
+  }
+
+  .home-v2 .ica-portrait img {
+    max-height: 700px;
+    transform: translateY(-30px) scale(1.04);
   }
 }
 
@@ -983,8 +1043,19 @@ body.home-v2 {
   }
 
   .home-v2 .ica-portrait {
-    min-height: 510px;
-    margin-top: -12px;
+    min-height: 540px;
+    margin: -18px 0 0;
+  }
+
+  .home-v2 .ica-portrait-image-wrap {
+    width: min(100%, 680px);
+    min-height: 540px;
+  }
+
+  .home-v2 .ica-portrait img {
+    width: min(108%, 650px);
+    max-height: 610px;
+    transform: translateY(-18px) scale(1.02);
   }
 }
 
@@ -1014,11 +1085,24 @@ body.home-v2 {
   }
 
   .home-v2 .ica-portrait {
-    min-height: 400px;
+    min-height: 410px;
+    margin-top: 0;
+  }
+
+  .home-v2 .ica-portrait-image-wrap {
+    min-height: 410px;
+    border-radius: 20px;
+  }
+
+  .home-v2 .ica-portrait img {
+    width: 112%;
+    max-height: 455px;
+    transform: translateY(-8px) scale(1.01);
   }
 
   .home-v2 .ica-portrait-caption {
-    right: 0;
-    bottom: 12px;
+    right: 8px;
+    bottom: 20px;
+    min-width: 180px;
   }
 }
